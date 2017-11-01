@@ -7,19 +7,19 @@ from uhd_processor import SampleFileAnalysis as sfa
 import os
 frequencies = prms.gsm_frequencies
 band_segments = utility_funcs.band_segmentation()
+
 #Extract mapped dp_freq
 #extract the specified frequencies 
 #save the maps to a csv file
-def process_files():
-	for segment in band_segments:
-		analizer = sfa(segment.filename, center_freq=segment.c_freq*1e6, sample_rate=segment.samp_rate*1e6)
-		freq_dB = analizer.freq_pow_pairs_map()
-		f_freq_dB = freq_dB[freq_dB['Freq'].isin(segment.channels*1e6)]
-		csv_file = segment.filename.split('.')[0].strip()+'.csv'
-		f_freq_dB.to_csv(csv_file)
-		os.remove(segment.filename)
-		segment.filename = None
-
+def process_files(segment):
+	#for segment in band_segments:
+	analizer = sfa(segment.filename, center_freq=segment.c_freq*1e6, sample_rate=segment.samp_rate*1e6)
+	freq_dB = analizer.freq_pow_pairs_map()
+	f_freq_dB = freq_dB[freq_dB['Freq'].isin(segment.channels*1e6)]
+	csv_file = segment.filename.split('.')[0].strip()+'.csv'
+	f_freq_dB.to_csv(csv_file)
+	os.remove(segment.filename)
+	segment.filename = None
 
 	return None
 def uhdRxCommands():
@@ -49,6 +49,7 @@ if __name__ =="__main__":
 		command = 'uhd_rx_cfile'+addr+gain+freq+samp_rate+num_samples+filename
 		print command
 		os.system(command)
+		process_files(segment)
 	#process_files()
 
 
