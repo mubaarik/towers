@@ -31,18 +31,26 @@ class SampleFileAnalysis:
         num_segments = self.n/self.samp_rate
         return self.cmplx_data[remains:].reshape(num_segments,self.samp_rate)
     #FFTs of the time series of the window sampling scans
-    def time_segments_fft(self):
-        segments = self.time_segments()
-        return np.apply_along_axis(np.fft.fft, 1, segments)
+    def time_segments_fft(self,segmented=True):
+        if segmented:
+            segments = self.time_segments()
+            return np.apply_along_axis(np.fft.fft, 1, segments)
+        else:
+            return self.fftSegment
+
     #Complex number to dB
     def complex_to_db(self,cmplx):
         return 20*np.log(np.absolute(cmplx))
     #Map Q,I to dB
-    def segments_to_db(self, fft=False):
+    def segments_to_db(self, fft=False, segmented=True):
+
         segments = self.time_segments()
         if fft:
-            segments = self.time_segments_fft()
-        return np.apply_along_axis(self.complex_to_db, 0,segments)
+            segments = self.time_segments_fft(segmented=segmented)
+        if segmented:
+            return np.apply_along_axis(self.complex_to_db, 0,segments)
+        else:
+            return complex_to_db(segments)
     #Plots a segment of data using the specified file sample rate and center freq
     #Inputs:
         #segment-> 1d numpy array to be plotted
@@ -92,11 +100,14 @@ class SampleFileAnalysis:
         pairs = np.vstack((segment.T,freq.T)).T
         return pd.DataFrame(pairs, columns=['Power(dB)','Freq'])
     #Map the windows of sample scans to dataframes
-    def freq_pow_pairs_map(self, fft = True):
-        segs = self.segments_to_db(fft=fft)
-        
-        dfs = pd.concat([self.freq_to_power(seg) for seg in segs])
-        return dfs
+    def freq_pow_pairs_map(self, fft = True, segmented=True):
+        segs = self.segments_to_db(fft=fft, segmented=segmented)
+        if segmented:
+            dfs = pd.concat([self.freq_to_power(seg) for seg in segs])
+            return dfs
+        else:
+            return self.freq_to_power(segs)
+            
     #Write the paired frequency, power components to a csv file
     def freq_pow_pair_to_csv(self,filename=None, fft=True):
         if filename==None:
