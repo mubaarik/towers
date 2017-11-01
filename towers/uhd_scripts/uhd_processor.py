@@ -50,7 +50,7 @@ class SampleFileAnalysis:
         if segmented:
             return np.apply_along_axis(self.complex_to_db, 0,segments)
         else:
-            return complex_to_db(segments)
+            return self.complex_to_db(segments)
     #Plots a segment of data using the specified file sample rate and center freq
     #Inputs:
         #segment-> 1d numpy array to be plotted
