@@ -2,6 +2,10 @@ import pandas as pd
 import numpy as np
 import os
 import ast
+import glob
+import time
+
+
 
 from uhd_processor import SampleFileAnalysis as sfa
 class BandSegment:
@@ -64,30 +68,62 @@ def band_segmentation():
 #Extract mapped dp_freq
 #extract the specified frequencies 
 #save the maps to a csv file
-def process_files(segment, filemap):
+def process_files(segment, filemap, output_dir):
     #for segment in band_segments:
+    input_file = segment.filename
+    output_file = output+'/'+segment.filename.split('.')[0].strip()+'.csv'
     analizer = sfa(segment.filename, center_freq=segment.c_freq*1e6, sample_rate=segment.samp_rate*1e6)
     freq_dB = analizer.freq_pow_pairs_map(segmented=False)
     channels = np.array(ast.literal_eval(segment.channels))*1e6
     f_freq_dB = freq_dB[freq_dB['Freq'].isin(channels)]
-    csv_file = segment.filename.split('.')[0].strip()+'.csv'
-    f_freq_dB.to_csv(csv_file)
+    #csv_file = segment.filename.split('.')[0].strip()+'.csv'
+    f_freq_dB.to_csv(output_file)
     os.remove(segment.filename)
     segment.filename = None
-    if segment.band in band_freq_map:
-        filemap[band].append(csv_file)
+    if segment.band in filemap:
+        filemap[segment.band].append(output_file)
     else:
-        filemap[band]=[csv_file]
+        filemap[segment.band]=[output_file]
 
     return None
-def band_channels(filemap):
+def band_channels(filemap,time, out_dir):
     for band in filemap.keys():
         df = pd.concat([pd.read_csv(filename) for filename in filemap[band]])
         df=df.reset_index().drop(['index'], axis=1)
-        csv_file = 'data_files/'+band.replace(' ','_')+'_'+str(int(round(time.time())))+'.csv'
+        csv_file = out_dir+'/'+band.replace(' ','_')+'_'+time+'.csv'
         df.to_csv(csv_file)
         for filename in filemap[band]:
             os.remove(filename)
+def qi_files_to_csv():
+    return None
+def filemap_to_df(filemap):
+    data_map = [{'band':obj.band,'samp_rate': obj.samp_rate, 'c_freq': obj.c_freq,'channels':obj.channels, 'filename': obj.filename} for obj in filemap]
+    return pd.DataFrame(data_map)
+
+
+def filemap_to_csv(filemap,out_dir):
+    df = filemap_to_df(filemap)
+    stamp=str(int(round(time.time())))+'.csv'
+    df.to_csv(out_dir+'/'+stamp)
+def row_to_object(row):
+    obj = dfRow_to_bandSegmentObj(row)
+    obj.filename = row.filename
+    return obj
+def df_to_bandsegment(file_name):
+    return pd.read_csv(file_name).apply(row_to_object,1)
+def directory_parser(directory, extension = '.csv'):
+    return glob.glob(directory+'/'+'*'+extension)
+
+def master_processor(dirc,ouput_dir ,ext='.csv'):
+    files = directory_parser(dirc, extension=ext)
+    for _file_ in files:
+        object_map = df_to_bandsegment(_file_)
+        filemap = {}
+        time = _file_.spilt('/')[0].split('.')[0]
+        for segment in object_map:
+            process_files(segment, filemap,output_dir)
+        os.remove(_file_)
+        band_channels(filemap,time,output_dir)
 
 
 

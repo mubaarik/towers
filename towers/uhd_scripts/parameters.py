@@ -1,3 +1,20 @@
+import os
+def makedir(direct):
+  if not os.path.exists(direct):
+    os.makedirs(direct)
+##################
+##Common parameters here
+##################
+QI_DATA_DIR = 'qi_files'
+makedir(QI_DATA_DIR)
+STREAM_FILE_MAP = 'stream_maps'
+makedir(STREAM_FILE_MAP)
+DATA_FILES = 'data_files'
+makedir(DATA_FILES)
+
+######## 
+
+
 gsm_frequencies = {'GSM 1800': [1805.2,
   1805.4,
   1805.6,

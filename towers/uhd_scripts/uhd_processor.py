@@ -23,7 +23,7 @@ class SampleFileAnalysis:
     #Return the fft of a segment of the data
     def fftSegment(self, strt_cut = 0, end_cut = 0):
         cmplx_samples = self.cmplx_data[strt_cut:self.n-end_cut];
-        return np.fft.ftt(cmplx_samples)
+        return np.fft.fft(cmplx_samples)
     
     #time series of the window sampling scans
     def time_segments(self):
@@ -36,7 +36,7 @@ class SampleFileAnalysis:
             segments = self.time_segments()
             return np.apply_along_axis(np.fft.fft, 1, segments)
         else:
-            return self.fftSegment
+            return self.fftSegment()
 
     #Complex number to dB
     def complex_to_db(self,cmplx):
@@ -47,10 +47,8 @@ class SampleFileAnalysis:
         segments = self.time_segments()
         if fft:
             segments = self.time_segments_fft(segmented=segmented)
-        if segmented:
-            return np.apply_along_axis(self.complex_to_db, 0,segments)
-        else:
-            return self.complex_to_db(segments)
+        return np.apply_along_axis(self.complex_to_db, 0,segments)
+        
     #Plots a segment of data using the specified file sample rate and center freq
     #Inputs:
         #segment-> 1d numpy array to be plotted
