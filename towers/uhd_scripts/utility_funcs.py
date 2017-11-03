@@ -97,7 +97,7 @@ def band_channels(filemap,time, out_dir):
 def qi_files_to_csv():
     return None
 def filemap_to_df(filemap):
-    data_map = [{'band':obj.band,'samp_rate': obj.samp_rate, 'c_freq': obj.c_freq,'channels':obj.channels, 'filename': obj.filename} for obj in filemap]
+    data_map = [{'band':obj.band,'samp_rate': obj.samp_rate, 'cntr_freq': obj.c_freq,'channels':obj.channels, 'filename': obj.filename} for obj in filemap]
     return pd.DataFrame(data_map)
 
 
