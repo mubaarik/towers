@@ -65,8 +65,8 @@ class usrp_fft(gr.top_block):
             for mb_idx in xrange(self.uhd_usrp.get_num_mboards()):
                 self.uhd_usrp.set_subdev_spec(options.spec,mb_idx)
         #set the anthena
-        if self.options.anthena is not None:
-            self.anthena = [x.strip() for x in options.antenna.split(",")]
+        if options.antenna is not None:
+            self.antenna = [x.strip() for x in options.antenna.split(",")]
             if len(self.antenna) != 1 and len(self.antenna) != len(self.channels):
                 sys.stderr.write("[UHD_RX] [ERROR] Invalid antenna setting for {} channels: {}".format(
                     len(self.channels), options.antenna
@@ -78,7 +78,7 @@ class usrp_fft(gr.top_block):
                 self._u.set_antenna(self.antenna[i], chan)
                 if options.verbose:
                     print("[UHD_RX] Channel {chan}: Using antenna {ant}.".format(
-                        chan=chan, ant=self._u.get_antenna(chan)
+                        chan=chan, ant=self.uhd_ursp.get_antenna(chan)
                     ))
         #Set the reciver sample rate
         self.uhd_usrp.set_samp_rate(options.samp_rate)
@@ -87,14 +87,14 @@ class usrp_fft(gr.top_block):
         if options.gain is None:
             print("[UHD_RX] Defaulting to mid-point gains:")
             for chan in self.channels:
-                self._u.set_normalized_gain(.5, chan)
-                print("[UHD_RX] Channel {chan} gain: {g} dB".format(chan=chan, g=self._u.get_gain(chan)))
+                self.uhd_usrp.set_normalized_gain(.5, chan)
+                print("[UHD_RX] Channel {chan} gain: {g} dB".format(chan=chan, g=self.uhd_usrp.get_gain(chan)))
         else:
             for chan in self.channels:
                 if options.normalized_gain:
-                    self._u.set_normalized_gain(options.gain, chan)
+                    self.uhd_usrp.set_normalized_gain(options.gain, chan)
                 else:
-                    self._u.set_gain(options.gain, chan)
+                    self.uhd_usrp.set_gain(options.gain, chan)
         gain = self.uhd_usrp.get_gain(self.channels[0])
         #set frequency (tune request takes lo_offset):
         if options.lo_offset is not None:
@@ -104,23 +104,23 @@ class usrp_fft(gr.top_block):
 
         #Make sure tuning is synched
         command_time_set = False
-        if len(channels)>1:
+        if len(self.channels)>1:
             if options.sync == 'pps':
                 self.uhd_usrp.set_time_unknown_pps(uhd.time_spec())
             try:
-                for mb_idx in xrange(self._u.get_num_mboards()):
-                    self._u.set_command_time(cmd_time, mb_idx)
+                for mb_idx in xrange(self.uhd_usrp.get_num_mboards()):
+                    self.uhd_usrp.set_command_time(cmd_time, mb_idx)
                 command_time_set = True
             except RuntimeError:
                 sys.stderr.write('[UHD_RX] [WARNING] Failed to set command times.\n')
         for chan in self.channels:
-            tr = self._u.set_center_freq(treq, chan)
+            tr = self.uhd_usrp.set_center_freq(treq, chan)
             if tr == None:
                 sys.stderr.write('[UHD_RX] [ERROR] Failed to set center frequency on channel {chan}\n'.format(chan=chan))
                 exit(1)
         if command_time_set:
-            for mb_idx in xrange(self._u.get_num_mboards()):
-                self._u.clear_command_time(mb_idx)
+            for mb_idx in xrange(self.uhd_usrp.get_num_mboards()):
+                self.uhd_usrp.clear_command_time(mb_idx)
             print("[UHD_RX] Syncing channels...")
             time.sleep(COMMAND_DELAY)
         freq = self.uhd_usrp.get_center_freq(self.channels[0])
@@ -128,17 +128,67 @@ class usrp_fft(gr.top_block):
 
         self.fft_vxx_0 = fft.fft_vcc(options.fft_size, True, (), True, 1)
         self.blocks_stream_to_vector_0 = blocks.stream_to_vector(gr.sizeof_gr_complex*1, options.fft_size)
-        self.blocks_file_sink_0 = blocks.file_sink(gr.sizeof_float*options.fft_size, "", False)
+        self.blocks_file_sink_0 = blocks.file_sink(gr.sizeof_float*options.fft_size,self.filenames[0])
         self.blocks_file_sink_0.set_unbuffered(False)
         self.blocks_complex_to_mag_squared_0 = blocks.complex_to_mag_squared(1024)
 
         ##################################################
         # Connections
         ##################################################
-        self.connect((self.blocks_complex_to_mag_squared_0, 0), (self.blocks_file_sink_0, 0))    
-        self.connect((self.blocks_stream_to_vector_0, 0), (self.fft_vxx_0, 0))    
-        self.connect((self.fft_vxx_0, 0), (self.blocks_complex_to_mag_squared_0, 0))    
-        self.connect((self.uhd_usrp, 0), (self.blocks_stream_to_vector_0, 0))    
+	if options.nsamples is None:
+        	self.connect((self.blocks_complex_to_mag_squared_0, 0), (self.blocks_file_sink_0, 0))
+	else:
+		self._head = blocks.head(gr.sizeof_float*options.fft_size, int(options.nsamples)/options.fft_size)
+		self.connect((self.blocks_complex_to_mag_squared_0, 0), self._head,(self.blocks_file_sink_0, 0))    
+    self.connect((self.blocks_stream_to_vector_0, 0), (self.fft_vxx_0, 0))    
+    self.connect((self.fft_vxx_0, 0), (self.blocks_complex_to_mag_squared_0, 0))    
+    self.connect((self.uhd_usrp, 0), (self.blocks_stream_to_vector_0, 0))  
+    if options.verbose:
+        try:
+            info = self._u.get_usrp_info()
+            mboard_id = info["mboard_id"].split(" ")[0]
+            if info["mboard_serial"] == "":
+                mboard_serial = "no serial"
+            else:
+                mboard_serial = info["mboard_serial"]
+            rx_id = info["rx_id"].split(" ")[0]
+            if info["rx_serial"] == "":
+                rx_serial = "no serial"
+            else:
+                rx_serial = info["rx_serial"]
+            rx_antenna = info["rx_antenna"]
+            rx_subdev_spec = info["rx_subdev_spec"]
+            print "[UHD_RX] Motherboard: %s (%s)" % (mboard_id, mboard_serial)
+            if "B200" in mboard_id or "B210" in mboard_id or "E310" in mboard_id:
+                print "[UHD_RX] Daughterboard: %s (%s, %s)" % (mboard_id, rx_antenna, rx_subdev_spec)
+            else:
+                print "[UHD_RX] Daughterboard: %s (%s, %s, %s)" % (rx_id, rx_serial, rx_antenna, rx_subdev_spec)
+        except KeyError:
+            print "[UHD_RX] Args: ", options.args
+        print("[UHD_RX] Receiving on {} channels.".format(len(self.channels)))
+        print("[UHD_RX] Rx gain:               {gain}".format(gain=gain))
+        print("[UHD_RX] Rx frequency:          {freq}".format(freq=freq))
+        print("[UHD_RX] Rx baseband frequency: {actual}".format(actual=n2s(tr.actual_rf_freq)))
+        print("[UHD_RX] Rx DDC frequency:      {dsp}".format(dsp=n2s(tr.actual_dsp_freq)))
+        print("[UHD_RX] Rx Sample Rate:        {rate}".format(rate=n2s(samp_rate)))
+        if options.nsamples is None:
+            print("[UHD_RX] Receiving samples until Ctrl-C")
+        else:
+            print("[UHD_RX] Receiving {n} samples.".format(n=n2s(options.nsamples)))
+        if options.output_shorts:
+            print("[UHD_RX] Writing 16-bit complex shorts")
+        else:
+            print("[UHD_RX] Writing 32-bit complex floats")
+        print("[UHD_RX] Output file(s): {files}".format(files=", ".join(self.filenames)))
+    # Direct asynchronous notifications to callback function:
+    
+    if options.show_async_msg:
+        self.async_msgq = gr.msg_queue(0)
+        self.async_src = uhd.amsg_source("", self.async_msgq)
+        self.async_rcv = gru.msgq_runner(self.async_msgq, self.async_callback)
+    def async_callback(self, msg):
+        md = self.async_src.msg_to_async_metadata_t(msg)
+        print("[UHD_RX] Channel: %i Time: %f Event: %i" % (md.channel, md.time_spec.get_real_secs(), md.event_code))
 
     
 
