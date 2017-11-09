@@ -75,7 +75,7 @@ class usrp_fft(gr.top_block):
             if len(self.antenna) == 1 and len(self.channels) > 1:
                 self.antenna = [self.antenna[0],] * len(self.channels)
             for i, chan in enumerate(self.channels):
-                self._u.set_antenna(self.antenna[i], chan)
+                self.uhd_usrp.set_antenna(self.antenna[i], chan)
                 if options.verbose:
                     print("[UHD_RX] Channel {chan}: Using antenna {ant}.".format(
                         chan=chan, ant=self.uhd_ursp.get_antenna(chan)
@@ -145,7 +145,7 @@ class usrp_fft(gr.top_block):
     self.connect((self.uhd_usrp, 0), (self.blocks_stream_to_vector_0, 0))  
     if options.verbose:
         try:
-            info = self._u.get_usrp_info()
+            info = self.uhd_usrp.get_usrp_info()
             mboard_id = info["mboard_id"].split(" ")[0]
             if info["mboard_serial"] == "":
                 mboard_serial = "no serial"
