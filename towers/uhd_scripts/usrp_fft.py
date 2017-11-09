@@ -135,60 +135,60 @@ class usrp_fft(gr.top_block):
         ##################################################
         # Connections
         ##################################################
-	if options.nsamples is None:
-        	self.connect((self.blocks_complex_to_mag_squared_0, 0), (self.blocks_file_sink_0, 0))
-	else:
-		self._head = blocks.head(gr.sizeof_float*options.fft_size, int(options.nsamples)/options.fft_size)
-		self.connect((self.blocks_complex_to_mag_squared_0, 0), self._head,(self.blocks_file_sink_0, 0))    
-    self.connect((self.blocks_stream_to_vector_0, 0), (self.fft_vxx_0, 0))    
-    self.connect((self.fft_vxx_0, 0), (self.blocks_complex_to_mag_squared_0, 0))    
-    self.connect((self.uhd_usrp, 0), (self.blocks_stream_to_vector_0, 0))  
-    if options.verbose:
-        try:
-            info = self.uhd_usrp.get_usrp_info()
-            mboard_id = info["mboard_id"].split(" ")[0]
-            if info["mboard_serial"] == "":
-                mboard_serial = "no serial"
+    	if options.nsamples is None:
+            	self.connect((self.blocks_complex_to_mag_squared_0, 0), (self.blocks_file_sink_0, 0))
+    	else:
+        	self._head = blocks.head(gr.sizeof_float*options.fft_size, int(options.nsamples)/options.fft_size)
+        	self.connect((self.blocks_complex_to_mag_squared_0, 0), self._head,(self.blocks_file_sink_0, 0))    
+        self.connect((self.blocks_stream_to_vector_0, 0), (self.fft_vxx_0, 0))    
+        self.connect((self.fft_vxx_0, 0), (self.blocks_complex_to_mag_squared_0, 0))    
+        self.connect((self.uhd_usrp, 0), (self.blocks_stream_to_vector_0, 0))  
+        if options.verbose:
+            try:
+                info = self.uhd_usrp.get_usrp_info()
+                mboard_id = info["mboard_id"].split(" ")[0]
+                if info["mboard_serial"] == "":
+                    mboard_serial = "no serial"
+                else:
+                    mboard_serial = info["mboard_serial"]
+                rx_id = info["rx_id"].split(" ")[0]
+                if info["rx_serial"] == "":
+                    rx_serial = "no serial"
+                else:
+                    rx_serial = info["rx_serial"]
+                rx_antenna = info["rx_antenna"]
+                rx_subdev_spec = info["rx_subdev_spec"]
+                print "[UHD_RX] Motherboard: %s (%s)" % (mboard_id, mboard_serial)
+                if "B200" in mboard_id or "B210" in mboard_id or "E310" in mboard_id:
+                    print "[UHD_RX] Daughterboard: %s (%s, %s)" % (mboard_id, rx_antenna, rx_subdev_spec)
+                else:
+                    print "[UHD_RX] Daughterboard: %s (%s, %s, %s)" % (rx_id, rx_serial, rx_antenna, rx_subdev_spec)
+            except KeyError:
+                print "[UHD_RX] Args: ", options.args
+            print("[UHD_RX] Receiving on {} channels.".format(len(self.channels)))
+            print("[UHD_RX] Rx gain:               {gain}".format(gain=gain))
+            print("[UHD_RX] Rx frequency:          {freq}".format(freq=freq))
+            print("[UHD_RX] Rx baseband frequency: {actual}".format(actual=n2s(tr.actual_rf_freq)))
+            print("[UHD_RX] Rx DDC frequency:      {dsp}".format(dsp=n2s(tr.actual_dsp_freq)))
+            print("[UHD_RX] Rx Sample Rate:        {rate}".format(rate=n2s(samp_rate)))
+            if options.nsamples is None:
+                print("[UHD_RX] Receiving samples until Ctrl-C")
             else:
-                mboard_serial = info["mboard_serial"]
-            rx_id = info["rx_id"].split(" ")[0]
-            if info["rx_serial"] == "":
-                rx_serial = "no serial"
+                print("[UHD_RX] Receiving {n} samples.".format(n=n2s(options.nsamples)))
+            if options.output_shorts:
+                print("[UHD_RX] Writing 16-bit complex shorts")
             else:
-                rx_serial = info["rx_serial"]
-            rx_antenna = info["rx_antenna"]
-            rx_subdev_spec = info["rx_subdev_spec"]
-            print "[UHD_RX] Motherboard: %s (%s)" % (mboard_id, mboard_serial)
-            if "B200" in mboard_id or "B210" in mboard_id or "E310" in mboard_id:
-                print "[UHD_RX] Daughterboard: %s (%s, %s)" % (mboard_id, rx_antenna, rx_subdev_spec)
-            else:
-                print "[UHD_RX] Daughterboard: %s (%s, %s, %s)" % (rx_id, rx_serial, rx_antenna, rx_subdev_spec)
-        except KeyError:
-            print "[UHD_RX] Args: ", options.args
-        print("[UHD_RX] Receiving on {} channels.".format(len(self.channels)))
-        print("[UHD_RX] Rx gain:               {gain}".format(gain=gain))
-        print("[UHD_RX] Rx frequency:          {freq}".format(freq=freq))
-        print("[UHD_RX] Rx baseband frequency: {actual}".format(actual=n2s(tr.actual_rf_freq)))
-        print("[UHD_RX] Rx DDC frequency:      {dsp}".format(dsp=n2s(tr.actual_dsp_freq)))
-        print("[UHD_RX] Rx Sample Rate:        {rate}".format(rate=n2s(samp_rate)))
-        if options.nsamples is None:
-            print("[UHD_RX] Receiving samples until Ctrl-C")
-        else:
-            print("[UHD_RX] Receiving {n} samples.".format(n=n2s(options.nsamples)))
-        if options.output_shorts:
-            print("[UHD_RX] Writing 16-bit complex shorts")
-        else:
-            print("[UHD_RX] Writing 32-bit complex floats")
-        print("[UHD_RX] Output file(s): {files}".format(files=", ".join(self.filenames)))
-    # Direct asynchronous notifications to callback function:
-    
-    if options.show_async_msg:
-        self.async_msgq = gr.msg_queue(0)
-        self.async_src = uhd.amsg_source("", self.async_msgq)
-        self.async_rcv = gru.msgq_runner(self.async_msgq, self.async_callback)
-    def async_callback(self, msg):
-        md = self.async_src.msg_to_async_metadata_t(msg)
-        print("[UHD_RX] Channel: %i Time: %f Event: %i" % (md.channel, md.time_spec.get_real_secs(), md.event_code))
+                print("[UHD_RX] Writing 32-bit complex floats")
+            print("[UHD_RX] Output file(s): {files}".format(files=", ".join(self.filenames)))
+        # Direct asynchronous notifications to callback function:
+
+        if options.show_async_msg:
+            self.async_msgq = gr.msg_queue(0)
+            self.async_src = uhd.amsg_source("", self.async_msgq)
+            self.async_rcv = gru.msgq_runner(self.async_msgq, self.async_callback)
+        def async_callback(self, msg):
+            md = self.async_src.msg_to_async_metadata_t(msg)
+            print("[UHD_RX] Channel: %i Time: %f Event: %i" % (md.channel, md.time_spec.get_real_secs(), md.event_code))
 
     
 
