@@ -101,6 +101,7 @@ def filemap_to_df(filemap):
     return pd.DataFrame(data_map)
 
 
+
 def filemap_to_csv(filemap,out_dir):
     df = filemap_to_df(filemap)
     stamp=str(int(round(time.time())))+'.csv'
@@ -124,6 +125,68 @@ def master_processor(dirc,ouput_dir ,ext='.csv'):
             process_files(segment, filemap,output_dir)
         os.remove(_file_)
         band_channels(filemap,time,output_dir)
+
+
+
+def unionizer(freq_map):
+    union = reduce(np.union1d,freq_map.values())
+    return union
+def segmenter(arry,out, threshold):
+    i =0
+    n = len(arry)-1
+    while i<n:
+        assert arry[i]<=arry[i+1],"expected sorted array!"
+        diff = (arry[i+1]-arry[i])
+        if diff>threshold:
+            out.append(arry[0:i+1])
+            arry = arry[i+1:]
+            i =0
+            n = len(arry)-1
+            
+    
+        i+=1
+    out.append(arry)
+    return out
+def arrange(freq_map, threshold=1.0):
+    arry = unionizer(freq_map)
+    return segmenter(arry,[], threshold)
+def cFrqs(band, samp_rate, overlap=.5):
+    
+    c_frqs = []
+    high = max(band)
+    low = min(band)
+    if (high-low)<samp_rate:
+        return [(low+high)/2.0]
+    c_freq = low+(samp_rate/2.0 - overlap)
+    while (samp_rate/2.0<(high-c_freq)):
+        c_frqs.append(c_freq)
+        c_freq = c_freq+(samp_rate-overlap)
+        if (samp_rate/2.0>(high-c_freq)):
+            c_frqs.append(c_freq)
+            #print "c_freq: ",c_freq
+    #print c_frqs
+    h_f = c_frqs[-1]
+    l_diff = overlap
+    h_diff = high-(h_f+samp_rate/2.0-overlap)
+    if h_diff<0:
+        h_diff = overlap+abs(h_diff)
+    #print h_diff, l_diff
+    diff = (h_diff-l_diff)/2.0
+    frqs = [c_frq-diff for c_frq in c_frqs]
+    #print "high low: ", high, low
+    
+    return frqs
+        
+    
+    
+def mapper(freqs, samp_rate):
+    mapps = []
+    for band in freqs:
+        mapps.extend(cFrqs(band,samp_rate))
+    return mapps
+def center_freqs(freq_map,samp_rate, threshold=1.0):
+    freqs = arrange(freq_map,threshold)
+    return mapper(freqs,samp_rate)
 
 
 
