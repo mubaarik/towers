@@ -8,7 +8,7 @@ prms.makedir('fft_files/')
 
 if __name__ == '__main__':
     (options,filename) = src.get_options()
-    options.nsamples = options.fft_size*options.num_fft
+    options.nsamples = options.fft_size*options.num_ffts
     freq_map = prms.gsm_frequencies
     c_freqs = ufcns.center_freqs(freq_map,options.samp_rate, threshold=1.0)
     for cfrq in c_freqs:
