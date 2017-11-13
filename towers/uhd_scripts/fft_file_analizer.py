@@ -74,7 +74,6 @@ class Analizer:
 		plt.show()
 
 
-Analizer(None)
 
 
 

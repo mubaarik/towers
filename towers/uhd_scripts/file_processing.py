@@ -1,5 +1,6 @@
 from parameters import *
 from utility_funcs import *
+from fft_file_analizer import *
 if __name__=='__main__':
 	sleeps=0
 	max_number_of_sleeps = 200

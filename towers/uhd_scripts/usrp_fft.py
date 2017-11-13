@@ -26,7 +26,8 @@ if __name__ == '__main__':
             tb.run()
         except KeyboardInterrupt:
             print('Data terminated')
-        if os.path.exists(filename):
-            ufcns.save_file(_time,filemap)
-        else:
-            print "No records collected"
+    _time = int(round(time.time()))
+    if os.path.exists(filename):
+        ufcns.save_file(_time,filemap)
+    else:
+        print "No records collected"
