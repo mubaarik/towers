@@ -10,7 +10,7 @@ if __name__ == '__main__':
     (options,filename) = src.get_options()
     options.nsamples = options.fft_size*options.num_ffts
     freq_map = prms.gsm_frequencies
-    c_freqs = ufcns.center_freqs(freq_map,options.samp_rate, threshold=1.0)
+    c_freqs = ufcns.center_freqs(freq_map,options.samp_rate/(1e6), threshold=1.0)
     for cfrq in c_freqs:
         options.freq = round(cfrq,3)
         filename = 'fft_files/'+str(int(time.time()))+'_'+str(options.freq).replace('.','_')+'.32fc'
