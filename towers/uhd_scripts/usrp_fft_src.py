@@ -211,7 +211,7 @@ def get_options():
                       help="Set daughterboard LO offset to OFFSET [default=hw default]")
     parser.add_option("-g", "--gain", type="eng_float", default=None,
                       help="Set gain in dB (default is midpoint)")
-    parser.add_option('--num_ftts',type=int, default=8,help="number of ffts for averaging")
+    parser.add_option('--num_ffts',type=int, default=8,help="number of ffts for averaging")
     parser.add_option("--normalized-gain", action="store_true",
                       help="Specify gain as normalized value (in [0, 1])")
     parser.add_option( "-m","--metafile", action="store_true", default=False,

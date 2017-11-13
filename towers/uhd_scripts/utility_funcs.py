@@ -156,7 +156,7 @@ def cFrqs(band, samp_rate, overlap=.5):
     high = max(band)
     low = min(band)
     if (high-low)<samp_rate:
-        return [(low+high)/2.0]
+        return [round((low+high)/2.0,3)*1e6]
     c_freq = low+(samp_rate/2.0 - overlap)
     while (samp_rate/2.0<(high-c_freq)):
         c_frqs.append(c_freq)
@@ -172,7 +172,7 @@ def cFrqs(band, samp_rate, overlap=.5):
         h_diff = overlap+abs(h_diff)
     #print h_diff, l_diff
     diff = (h_diff-l_diff)/2.0
-    frqs = [c_frq-diff for c_frq in c_frqs]
+    frqs = [round(c_frq-diff,3)*1e6 for c_frq in c_frqs]
     #print "high low: ", high, low
     
     return frqs
