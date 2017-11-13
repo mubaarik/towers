@@ -2,6 +2,7 @@ import usrp_fft_src as src
 import utility_funcs as ufcns
 import parameters as prms
 import time
+import os
 prms.makedir('fft_files/')
 prms.makedir('meta_files/')
 prms.makedir('collected_data/')
