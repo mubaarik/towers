@@ -19,7 +19,7 @@ if __name__ == '__main__':
         _time = int(round(time.time()))
         filename = 'fft_files/'+str(options.freq).replace('.','_')+'.32fc'
         filemap.append({'fft_size':options.fft_size,'samp_rate':options.samp_rate,
-            'c_freq':options.freq,'gain':gain,'filename':filename,'time': filename})
+            'c_freq':options.freq,'gain':options.gain,'filename':filename,'time': _time})
         tb = src.usrp_fft(options,filename)
         try:
             tb.run()
