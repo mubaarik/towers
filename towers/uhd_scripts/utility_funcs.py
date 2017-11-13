@@ -188,6 +188,9 @@ def center_freqs(freq_map,samp_rate, threshold=1.0):
     freqs = arrange(freq_map,threshold)
     return mapper(freqs,samp_rate)
 
+def save_file(name,filemap,dirc = 'meta_files'):
+    pd.DataFrame(filemap).to_csv(dirc+'/'+str(name)+'.csv')
+
 
 
 
