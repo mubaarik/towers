@@ -48,7 +48,7 @@ class Analizer:
 		self.row_map = data
 		return data
 	def multiply_conj(cmplx):
-		return cmplx*np.conjugate(cmplx)
+		return abs(cmplx*np.conjugate(cmplx))
 	def fft_average(self,sample):
 		filename = sample.filename
 		vect = np.vectorize(self.multiply_conj)
