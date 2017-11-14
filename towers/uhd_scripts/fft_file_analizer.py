@@ -2,6 +2,7 @@ import scipy as scp
 import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
+import os
 
 class Sample:
 	def __init__(self,time_stamp, center_freq,filename):
@@ -47,7 +48,7 @@ class Analizer:
 		self.filename= None
 		self.row_map = data
 		return data
-	def multiply_conj(cmplx):
+	def multiply_conj(self,cmplx):
 		return abs(cmplx*np.conjugate(cmplx))
 	def fft_average(self,sample):
 		filename = sample.filename
