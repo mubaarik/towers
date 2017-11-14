@@ -40,16 +40,20 @@ class Analizer:
 			self.fft_size = row.fft_size
 		if self.gain is None:
 			self.gain = row.gain
-		return Sample(row.stamp,row.c_freq,row.filename)
+		return Sample(row.time,row.c_freq,row.filename)
 	def row_mapper(self):
-		data = pd.read_csv(self.filename).apply(row_converter,1)
-		os.remove(filename)
+		data = pd.read_csv(self.filename).apply(self.row_converter,1)
+		os.remove(self.filename)
 		self.filename= None
 		self.row_map = data
 		return data
+	def multiply_conj(cmplx):
+		return cmplx*np.conjugate(cmplx)
 	def fft_average(self,sample):
 		filename = sample.filename
-		data = scipy.fromfile(open(filename), dtype = scipy.float32)
+		vect = np.vectorize(self.multiply_conj)
+		data = scp.fromfile(open(filename), dtype = scp.complex64)
+		data = vect(data)
 		number_of_ffts = len(data)/self.fft_size
 		segments = data.reshape(number_of_ffts,self.fft_size)
 		means = np.average(segments,axis=0)

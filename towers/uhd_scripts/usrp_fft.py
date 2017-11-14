@@ -18,7 +18,7 @@ if __name__ == '__main__':
     for cfrq in c_freqs:
         options.freq = round(cfrq,3)
         _time = int(round(time.time()))
-        filename = 'fft_files/'+str(options.freq).replace('.','_')+'.32fc'
+        filename = 'fft_files/'+str(_time)+'_'+str(options.freq).replace('.','_')+'.32fc'
         filemap.append({'fft_size':options.fft_size,'samp_rate':options.samp_rate,
             'c_freq':options.freq,'gain':options.gain,'filename':filename,'time': _time})
         tb = src.usrp_fft(options,filename)
