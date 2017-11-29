@@ -14,7 +14,7 @@ Following is an example using the recommended configurations.
 
 `sudo ifconfig eth0 192.168.10.1 netmask 255.255.255.0` (recommended method)
 
-for more informations regarding the USRP networking configuration, please visit [the USRP hardware manual documentation](https://files.ettus.com/manual/page_usrp2.html).
+for more informations regarding the USRP networking configuration, please visit the USRP [hardware manual](https://files.ettus.com/manual/page_usrp2.html).
 ### Run the data collection scripts 
 
 ## Modules 
