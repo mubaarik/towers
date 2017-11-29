@@ -20,7 +20,7 @@ To run the scripts please use the following command. The command expects that th
 
 `usrp_rx_command <optional arguments>`
 
-#####OPtional Arguments 
+##### OPtional Arguments 
 
 The following are the list arguments you can specify for resired configuration.
 
