@@ -47,19 +47,22 @@ The following are the list arguments you can specify for resired configuration w
   - expected format: -f <hz>, --freq=<hz>
   - examples: -f 850M
   - default: 850M
+  
 5.**-g**, **--gain**
   - type: float
   - Description: Gain of the device in dB(default is midpoint)
-  - expected format:  
-  - examples: 
-  - default: 
+  - expected format: -g <float>, --gain=<float>, or --gain <float>
+  - examples: -g 25
+  - default: 20
 6. **--num_ffts**
   - type: int 
   - Description: Number of ffts to collect at current center frequency.
   - expected format: --num_ffts=<int> or --num_ffts <int>
   - examples: --num_ffts=8
   - default: 8
+The above parameters are the most the important and relevant arguments but there are many more commands you could specify. To see more detailed list of the optional arguments run `usrp_rx_commannds --help`. 
 
+This program uses the **argparser** module, for better understanding of the command line argument specifications please [see](https://docs.python.org/2/library/argparse.html). Thank you.
 ### Rerefence  
 
 ##### Collecting the FFT Samples
