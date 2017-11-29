@@ -30,35 +30,35 @@ The following are the list arguments you can specify for resired configuration w
   - example: -a "addr=192.168.10.1" 
   - defualt: 192.168.10.2
 2. **-r**, **--samp-rate**
-  - type:float, default=10e6,
-                      help="Set sample rate (bandwidth) [default=%default]")
-    parser.add_option('-z','--fft-size', type=int,default=4092, 
-                        help = "Set the FFT bins(defaults to 1024)")
-    parser.add_option("-f", "--freq", type="eng_float", default=None,
-                      help="Set frequency to FREQ", metavar="FREQ")
-    parser.add_option("", "--lo-offset", type="eng_float", default=None,
-                      help="Set daughterboard LO offset to OFFSET [default=hw default]")
-    parser.add_option("-g", "--gain", type="eng_float", default=None,
-                      help="Set gain in dB (default is midpoint)")
-    parser.add_option('--num_ffts',type=int, default=8,help="number of ffts for averaging")
-    parser.add_option("--normalized-gain", action="store_true",
-                      help="Specify gain as normalized value (in [0, 1])")
-    parser.add_option( "-m","--metafile", action="store_true", default=False,
-                      help="output metadata to file [default=%default]")
-    parser.add_option( "-s","--output-shorts", action="store_true", default=False,
-                      help="Output interleaved shorts instead of complex floats")
-    parser.add_option("-N", "--nsamples", type="eng_float", default=None,
-                      help="Number of samples to collect [default=+inf]")
-    parser.add_option("-v", "--verbose", action="store_true", default=False,
-                      help="verbose output")
-    parser.add_option("", "--wire-format", type="string", default="sc16",
-                      help="Set wire format from USRP [default=%default")
-    parser.add_option("", "--stream-args", type="string", default="",
-                      help="Set additional stream arguments")
-    parser.add_option("", "--show-async-msg", action="store_true", default=False,
-                      help="Show asynchronous message notifications from UHD [default=%default]")
-    parser.add_option("", "--sync", type="choice", choices=('default', 'pps'),
-                      default='default', help="Set to 'pps' to sync devices to PPS instead of internal.")
+  - type:float 
+  - Description: The device sample rate (bandwidth) in samples/second
+  - expected format: -r <x> --samp-rate=<x> or --samp-rate <x>. 
+  -examples: The following are equivalent: -a 20000000, -a 20M, -a 20e10, --samp-rate=20M, --samp-rate 20M
+  - default: 10e6
+3. **-z**,**--fft-size**
+  - type:int 
+  - Description: The number of FFT bins or fft resolution, expected to be power of 2.
+  - expected format: -z <x> --fft-size=<x> or --fftt-size <x>. 
+  - examples: --fft-size <x>, --fft-size=<x>, -z <x> . <x> should be power of 2 for better performance. 
+  - default: 4096
+4. **-f**, **--freq**, 
+  - type: float
+  - Description: Center freq of the samples. 
+  - expected format: -f <hz>, --freq=<hz>
+  - examples: -f 850M
+  - default: 850M
+5.**-g**, **--gain**
+  - type: float
+  - Description: Gain of the device in dB(default is midpoint)
+  - expected format:  
+  - examples: 
+  - default: 
+6. **--num_ffts**
+  - type: int 
+  - Description: Number of ffts to collect at current center frequency.
+  - expected format: --num_ffts=<int> or --num_ffts <int>
+  - examples: --num_ffts=8
+  - default: 8
 
 ### Rerefence  
 
