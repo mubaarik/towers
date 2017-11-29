@@ -8,6 +8,6 @@
 
 ## Modules 
 
-### Collecting the FFT Samples
+#### Collecting the FFT Samples
 
-### Processing the FFT samples 
+#### Processing the FFT samples 
