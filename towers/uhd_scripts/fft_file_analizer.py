@@ -3,6 +3,9 @@ import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
 import os
+'''
+Sample file object
+'''
 
 class Sample:
 	def __init__(self,time_stamp, center_freq,filename):
@@ -15,6 +18,9 @@ class Sample:
 		return self.time_stamp
 	def get_file(self):
 		return self.filename
+'''
+
+'''
 class Analizer:
 	def __init__(self,filename):
 		self.samp_rate = None 
