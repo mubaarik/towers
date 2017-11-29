@@ -1,0 +1,188 @@
+,,Registration Number,Status,File Number,Owner Name,Latitude/Longitude,Structure City/State,Overall Height Above Ground (AGL)
+1,1.0,1002113,Constructed,A0232878,INDUSTRIAL COMMUNICATIONS & ELECTRONICS INC,41-57-44.2N 070-42-56.5W,"Kingston, MA",151.1
+2,2.0,1003415,Constructed,A1033819,"Townsquare Media New Bedford, LLC",41-39-02.0N 070-54-56.0W,"FAIRHAVEN, MA",84.8
+3,3.0,1003416,Constructed,A1033818,"Townsquare Media New Bedford, LLC",41-39-02.0N 070-54-56.0W,"FAIRHAVEN, MA",84.8
+4,4.0,1004088,Constructed,A1089514,"American Towers, LLC",41-33-31.0N 070-35-44.0W,"FALMOUTH, MA",155.7
+5,5.0,1004089,Constructed,A0814898,"American Towers, LLC",41-42-03.1N 070-35-17.1W,"Pocasset, MA",72.5
+6,6.0,1004090,Constructed,A1011086,Global Signal Acquisitions LLC,41-41-26.0N 070-11-19.0W,"Hyannis, MA",97.8
+7,7.0,1004126,Constructed,A0985370,Verizon New England Inc,41-39-06.0N 070-16-56.0W,"HYANNIS, MA",33.5
+8,8.0,1004416,Constructed,A0895208,"American Towers, LLC",41-26-16.2N 070-36-48.6W,"Vineyard Haven, MA",62.4
+9,9.0,1004503,Constructed,A0777871,"WJFD-FM, Inc.",41-38-15.2N 070-52-14.8W,"FAIRHAVEN, MA",170.0
+10,10.0,1005125,Constructed,A0077487,OUTLET COMMUNICATIONS INC,41-46-39.0N 070-55-39.0W,"EAST FREETOWN, MA",254.5
+1,11.0,1005229,Constructed,A0819255,"SpectraSite Communications, LLC. through American Towers, LLC.",41-52-56.8N 070-57-32.4W,"LAKEVILLE, MA",51.5
+2,12.0,1005237,Terminated,A0705594,"Nextel Communications of the Mid-Atlantic, Inc.",41-46-25.0N 070-34-13.0W,"BOURNE, MA",60.0
+3,13.0,1005238,Constructed,A0819257,"SpectraSite Communications, LLC. through American Towers, LLC.",41-50-57.3N 070-51-18.1W,"MIDDLEBORO, MA",46.0
+4,14.0,1005244,Dismantled,A0706626,"Spectrasite Communications, Inc. through American Tower, Inc.",41-48-25.1N 070-47-02.0W,"ROCHESTER, MA",29.8
+5,15.0,1006318,Constructed,A0805923,"American Towers, LLC.",41-23-03.0N 070-31-28.0W,"EDGARTOWN, MA",52.4
+6,16.0,1006319,Constructed,A0985374,Verizon New England Inc,41-23-37.0N 070-32-13.0W,"EDGARTOWN, MA",55.8
+7,17.0,1006320,Constructed,A1084723,"Industrial Tower and Wireless, LLC",41-40-56.9N 070-21-16.1W,"Barnstable, MA",53.3
+8,18.0,1006321,Constructed,A0985375,Verizon New England Inc,41-26-40.0N 070-36-30.0W,"VINEYARD HAVEN, MA",26.0
+9,19.0,1006323,Constructed,A0833044,"SBA Properties, LLC",41-56-36.9N 070-42-02.9W,"Plymouth, MA",67.4
+10,20.0,1006679,Constructed,A0007923,PLYMOUTH ROCK BROADCASTING CO INC DBA = WPLM,41-58-04.0N 070-42-01.0W,"PLYMOUTH, MA",117.7
+1,21.0,1006680,Constructed,A0007924,PLYMOUTH ROCK BROADCASTING CO INC DBA = WPLM,41-58-05.0N 070-42-03.0W,"PLYMOUTH, MA",116.1
+2,22.0,1006681,Constructed,A0007925,PLYMOUTH ROCK BROADCASTING CO INC DBA = WPLM,41-58-06.0N 070-42-05.0W,"PLYMOUTH, MA",117.3
+3,23.0,1006682,Constructed,A0007926,PLYMOUTH ROCK BROADCASTING CO INC DBA = WPLM,41-58-07.0N 070-42-07.0W,"PLYMOUTH, MA",118.4
+4,24.0,1007019,Dismantled,A0211911,"American Tower, L.P.",41-41-28.0N 070-12-33.0W,"YARMOUTH, MA",33.5
+5,25.0,1007032,Constructed,A0008379,CAPE COD BROADCASTING CORPORATION DBA = WOCN FM,41-41-30.0N 070-08-41.0W,"DENNIS, MA",99.0
+6,26.0,1007529,Constructed,A1001741,"IWG Towers Assets I, LLC",41-57-22.3N 070-42-27.3W,"Plymouth, MA",42.3
+7,27.0,1007531,Terminated,A0363123,"Adelphia Cablevision Associates, L.P., Debtor-in-Possession",41-33-31.0N 070-37-40.0W,"FALMOUTH, MA",50.2
+8,28.0,1007739,Dismantled,A0624538,"American Towers, Inc.",41-42-02.4N 070-35-15.8W,"BOURNE, MA",72.2
+9,29.0,1007748,Constructed,A1010906,Crown Castle Towers 06-2 LLC,41-38-07.7N 070-14-04.9W,"West Yarmouth, MA",93.3
+10,30.0,1007750,Constructed,A1010907,Crown Castle Towers 06-2 LLC,41-43-44.5N 070-09-59.9W,"DENNIS, MA",110.6
+1,31.0,1007828,Constructed,A0831355,"Industrial Tower and Wireless, LLC",41-56-01.8N 070-35-08.2W,"PLYMOUTH, MA",128.0
+2,32.0,1007941,Terminated,A0280927,"ADELPHIA CABLEVISION CORP, Debtor-in-Possession",41-44-30.0N 070-34-58.0W,"BOURNE, MA",36.5
+3,33.0,1008408,Constructed,A0010008,"MASSACHUSETTS, COMMONWEALTH OF DBA = ENV MGMT DEPT MGR JOHN MOTRONI",41-25-26.0N 070-40-19.0W,"W. TISBURY, MA",24.6
+4,34.0,1009579,Constructed,A1011968,Crown Atlantic Company LLC,41-46-34.3N 070-55-51.7W,"EAST FREETOWN, MA",71.9
+5,35.0,1010137,Granted,A0078103,"FLYNN, PAUL",41-41-20.0N 070-20-47.0W,"WEST BARNSTABLE, MA",131.4
+6,36.0,1010138,Terminated,A0201326,"Southwestern Bell Mobile Systems, LLC",41-41-19.0N 070-20-49.0W,"WEST BARNSTABLE, MA",131.4
+7,37.0,1010209,Dismantled,A0370933,PINNACLE TOWERS INC.,41-41-19.0N 070-20-47.0W,"WEST BARNSTABLE, MA",131.4
+8,38.0,1010465,Terminated,A0078146,CELLCO PARTNERSHIP DBA = BELL ATLANTIC NYNEX MOBILE,41-55-23.0N 070-49-12.0W,"CARVER, MA",61.0
+9,39.0,1013714,Constructed,A0016418,COLONIAL GAS COMPANY,41-40-42.0N 070-35-53.0W,"BOURNE, MA",79.0
+10,40.0,1014687,Constructed,A1012009,Crown Atlantic Company LLC,41-41-01.4N 070-21-34.1W,"BARNSTABLE, MA",50.6
+1,41.0,1016490,Constructed,A1090243,"Nexstar Broadcasting, Inc.",41-46-39.0N 070-55-39.0W,"EAST FREETOWN, MA",235.3
+2,42.0,1017403,Dismantled,A1081956,HALL COMMUNICATIONS INC,41-37-21.0N 070-55-05.0W,"NEW BEDFORD, MA",176.8
+3,43.0,1017975,Constructed,A0400433,"Industrial Communications & Electronics, Inc.",41-49-29.9N 070-51-04.5W,"Middleboro, MA",56.3
+4,44.0,1018712,Constructed,A0311585,Mirant Canal L.L.C.,41-46-11.0N 070-30-33.0W,"SANDWICH, MA",151.8
+5,45.0,1019302,Granted,A0973235,"Comcast of Massachusetts I, Inc.",41-36-11.1N 070-29-34.3W,"MASHPEE, MA",68.5
+6,46.0,1019304,Constructed,A1001751,"IWG Towers Assets I, LLC",41-42-54.7N 070-46-20.4W,"MARION, MA",74.7
+7,47.0,1020722,Constructed,A0815019,"American Towers, LLC",41-39-09.3N 070-56-07.8W,"NEW BEDFORD, MA",49.7
+8,48.0,1021869,Constructed,A0205021,County of Plymouth,41-55-21.0N 070-39-05.0W,"PLYMOUTH, MA",77.4
+9,49.0,1025678,Constructed,A1026399,STC Six Company,41-53-41.5N 070-56-48.6W,"MIDDLEBOROUGH, MA",46.9
+10,50.0,1028575,Constructed,A0213376,"MASSACHUSETTS, STATE OF",41-53-35.0N 070-56-35.0W,"MIDDLEBOROUGH, MA",106.1
+1,51.0,1035667,Dismantled,A0683121,"Comcast of Southern New England, Inc.",41-39-05.3N 070-56-43.1W,"NEW BEDFORD, MA",36.0
+2,52.0,1040720,Granted,A0047951,"BROADCASTING FOR THE CHALLENGED, INC.",41-39-11.0N 070-59-05.0W,"NORTH DARTMOUTH, MA",24.0
+3,53.0,1040778,Constructed,A0048027,"OMNIPOINT COMMUNICATIONS MB OPERATIONS, INC.",41-34-54.0N 070-32-21.0W,"EAST FALMOUTH, MA",31.3
+4,54.0,1042825,Constructed,A0815221,"American Towers, LLC",41-52-25.0N 070-53-27.3W,"Taunton, MA",59.4
+5,55.0,1044418,Granted,A0052424,"ESPINDOLA, RICHARD & NANCY DBA = G&G COMMUNICATIONS",41-38-23.0N 070-58-03.0W,"NORTH DARTMOUTH, MA",47.8
+6,56.0,1048350,Constructed,A1082595,AT&T Mobility Spectrum LLC,41-23-19.0N 070-36-45.0W,"WEST TISBURY, MA",10.4
+7,57.0,1057676,Constructed,A0247321,J & F REALTY TRUST,42-00-42.0N 070-58-10.0W,"EAST BRIDGEWATER, MA",59.4
+8,58.0,1058694,Constructed,A0819363,"SpectraSite Communications, LLC. through American Towers, LLC.",41-43-11.5N 070-57-14.4W,"NEW BEDFORD, MA",47.5
+9,59.0,1059742,Constructed,A0833281,"SBA Properties, LLC",41-36-13.6N 070-29-19.4W,"MASHPEE, MA",83.2
+10,60.0,1060323,Terminated,A0183409,"American Tower through UNIsite, Inc.",41-39-58.0N 070-59-22.0W,"DARMOUTH, MA",37.8
+1,61.0,1060716,Constructed,A0071165,FULLER ELECTRIC,41-40-47.0N 070-14-56.0W,"WEST YARMOUTH, MA",24.4
+2,62.0,1061157,Terminated,A0580790,"Spectrasite Communications, Inc. through American Tower, Inc.",41-54-30.1N 070-55-29.2W,"MIDDLEBOROUGH, MA",48.8
+3,63.0,1061550,Constructed,A0815340,"American Towers, LLC",41-39-58.2N 070-59-22.2W,"DARTMOUTH, MA",37.7
+4,64.0,1061823,Constructed,A0072326,"BARNSTABLE, COUNTY OF",41-41-57.0N 070-18-11.0W,"BARNSTABLE, MA",61.0
+5,65.0,1062850,Terminated,A0479419,"Spectrasite Communications, Inc. through American Tower, Inc.",41-48-01.5N 070-57-47.4W,"LAKEVILLE, MA",51.8
+6,66.0,1064609,Terminated,A0100023,"AT&T WIRELESS SERVICES, INC.",41-56-02.0N 070-39-24.0W,"PLYMOUTH, MA",57.9
+7,67.0,1064952,Constructed,A0075606,DUKES COUNTY COMMUNICATIONS DBA = BARDWELL ELECTRONICS,41-26-23.0N 070-34-48.0W,"OAK BLUFFS, MA",42.7
+8,68.0,1064954,Constructed,A0830098,"Bardwell,Douglas",41-26-43.4N 070-36-48.6W,"TISBURY, MA",42.7
+9,69.0,1065307,Constructed,A0075964,COMMONWEALTH ELECTRIC,41-41-02.0N 070-20-55.0W,"BARNSTABLE, MA",78.0
+10,70.0,1065403,Constructed,A0833345,"SBA Properties, LLC",41-46-25.0N 070-42-07.0W,"WAREHAM, MA",60.7
+1,71.0,1065780,Constructed,A1052587,"American Towers, LLC",41-55-25.1N 070-49-07.4W,"NORTH CARVER, MA",60.9
+2,72.0,1065822,Constructed,A0076479,TELECORP PCS LLC DBA = TELECORP PCS,41-43-44.0N 070-23-58.0W,"SANDWICH, MA",18.2
+3,73.0,1200179,Constructed,A1030364,CCATT LLC,41-36-53.7N 070-36-36.6W,"FALMOUTH, MA",58.2
+4,74.0,1201678,Constructed,A0835092,"SBA Structures, LLC",41-38-25.3N 070-55-01.2W,"New Bedford, MA",120.1
+5,75.0,1202411,Constructed,A0154361,Town of Barnstable,41-40-30.0N 070-18-43.0W,"Hyannis, MA",30.7
+6,76.0,1202825,Constructed,A1089635,"American Towers, LLC",41-38-00.3N 070-55-48.1W,"New Bedford, MA",48.5
+7,77.0,1203599,Cancelled,A0141370,AAT Communications Corporations,41-38-26.3N 070-55-02.0W,"NEW BEDFORD, MA",120.3
+8,78.0,1204108,Constructed,A0232882,"Industrial Communications & Electronics, Inc.",41-47-58.4N 070-32-37.7W,"Bourne, MA",60.9
+9,79.0,1204436,Cancelled,A0586469,"Nextel Communications of the Mid-Atlantic, Inc.",41-54-27.4N 070-37-29.4W,"PLYMOUTH, MA",50.2
+10,80.0,1208670,Constructed,A1026404,STC Six Company,41-39-32.2N 070-19-32.8W,"Hyannis, MA",39.3
+1,81.0,1208673,Constructed,A1026405,STC Six Company,41-23-15.7N 070-36-45.0W,"West Tisbury, MA",22.3
+2,82.0,1209664,Granted,A0114617,"Northland Cranberries, Inc.",42-01-48.3N 070-51-22.1W,"Hanson, MA",31.0
+3,83.0,1209840,Granted,A0114368,WinStar Wireless Fiber Corp.,41-39-07.3N 070-31-14.1W,"North Falmouth, MA",31.7
+4,84.0,1210211,Constructed,A0181978,Commonwealth of Massachusetts Department of State Police,41-53-35.2N 070-56-35.0W,"Middleborough, MA",106.1
+5,85.0,1211469,Constructed,A1026406,STC Six Company,41-42-17.5N 070-56-07.6W,"New Bedford, MA",29.0
+6,86.0,1211603,Constructed,A0197708,TOWN TAXI OF CAPE COD,41-40-20.4N 070-17-49.1W,"Hyannis, MA",26.5
+7,87.0,1211911,Constructed,A0204891,Entergy Nuclear Generation Company,41-56-47.3N 070-35-01.4W,"Plymouth, MA",73.2
+8,88.0,1211913,Constructed,A0204892,Entergy Nuclear Generation Company,41-56-01.6N 070-34-58.1W,"Plymouth, MA",66.3
+9,89.0,1212254,Constructed,A0826764,"SEACOAST LIMITED PARTNERSHIP, LLP",41-42-31.0N 070-25-38.0W,"Sandwich, MA",54.9
+10,90.0,1212445,Granted,A0123238,"Weathermark Investments, Inc F.K.A. Buckley & Scott Co., Inc.",41-34-44.3N 070-34-07.1W,"EAST FALMOUTH, MA",44.2
+1,91.0,1212527,Granted,A0123593,Corp Brothers Inc,41-39-55.4N 070-17-28.1W,"Hyannis, MA",25.9
+2,92.0,1212531,Granted,A0123603,Corp Brothers Inc,41-39-40.4N 070-56-19.1W,"New Bedford, MA",42.4
+3,93.0,1216488,Dismantled,A0333779,"SBA Properties, Inc.",41-41-33.4N 070-08-51.1W,"South Dennis, MA",91.4
+4,94.0,1216584,Constructed,A0815634,"American Towers, LLC.",41-34-54.4N 070-32-21.0W,"East Falmouth, MA",32.3
+5,95.0,1216652,Constructed,A1082699,AT&T Mobility Spectrum LLC,41-43-56.1N 070-27-31.2W,"SANDWICH, MA",16.8
+6,96.0,1216830,Constructed,A1052317,"Industrial Tower and Wireless, LLC",41-54-43.1N 070-52-13.5W,"Middleboro, MA",60.9
+7,97.0,1217409,Cancelled,A0508841,"NEW CINGULAR WIRELESS PCS, LLC",41-43-44.0N 070-23-58.0W,"SANDWICH, MA",18.3
+8,98.0,1217933,Constructed,A0232873,"Industrial Communications & Electronics, Inc.",41-51-37.9N 070-43-35.6W,"Carver, MA",48.7
+9,99.0,1217936,Constructed,A0142606,"Industrial Communications & Electronics, Inc.",41-59-40.0N 070-53-48.0W,"Halifax, MA",48.7
+10,100.0,1218840,Cancelled,A0145903,Sprint Spectrum L.P.,41-50-29.7N 070-59-30.7W,"LAKEVILLE, MA",37.2
+1,101.0,1218872,Constructed,A0232875,"Industrial Communications & Electronics, Inc.",41-57-09.8N 070-46-18.8W,"Plympton, MA",57.9
+2,102.0,1218947,Cancelled,A0518783,"NEW CINGULAR WIRELESS PCS, LLC",41-38-59.6N 070-25-27.8W,"MARSTONS MILLS, MA",29.0
+3,103.0,1219338,Dismantled,A0521905,Omnipoint Communications Inc.,41-40-48.6N 070-56-27.6W,"New Bedford, MA",21.6
+4,104.0,1219339,Dismantled,A0978366,T-Mobile Northeast LLC,41-40-59.4N 070-56-29.4W,"New Bedford, MA",33.5
+5,105.0,1219371,Constructed,A0626051,Green Mountain Realty,41-40-29.4N 070-56-23.2W,"New Bedford, MA",40.8
+6,106.0,1219482,Constructed,A0749132,T-Mobile Northeast LLC,41-40-11.0N 070-13-55.0W,"Yarmouth, MA",48.8
+7,107.0,1226932,Constructed,A1026411,STC Six Company,41-41-10.4N 070-17-50.2W,"HYANNIS, MA",27.1
+8,108.0,1228642,Constructed,A0590468,SBA Towers II LLC,42-01-55.0N 070-51-43.2W,"Hanson, MA",45.7
+9,109.0,1230486,Granted,A0219915,Commonwealth of Massachusetts Department of State Police,41-41-17.3N 070-12-56.0W,"Yarmouth, MA",54.8
+10,110.0,1230487,Granted,A0232428,Commonwealth of Massachusetts Department of State Police,41-44-38.6N 070-35-16.0W,"Bourne, MA",59.4
+1,111.0,1230930,Constructed,A0360975,"Industrial Communications & Electronics, Inc.",41-39-33.0N 070-24-00.5W,"Barnstable, MA",60.9
+2,112.0,1231034,Constructed,A1020867,Pinnacle Towers LLC,41-41-20.1N 070-20-47.1W,"Barnstable, MA",128.3
+3,113.0,1231044,Cancelled,A0330734,"Sprint Spectrum, L.P.",41-54-37.8N 070-42-30.0W,"PLYMOUTH, MA",48.1
+4,114.0,1232457,Constructed,A1023018,T-Mobile USA Tower LLC,41-57-34.0N 070-40-08.1W,"Plymounth, MA",27.7
+5,115.0,1232599,Cancelled,A0345971,"Omnipoint Holdings, Inc.",41-40-29.3N 070-56-23.2W,"New Bedford, MA",10.3
+6,116.0,1232601,Constructed,A0815829,"American Towers, LLC.",41-55-03.3N 070-57-42.2W,"Middleboro, MA",47.8
+7,117.0,1232948,Constructed,A0827076,"Seacoast, LP",41-38-30.2N 070-35-50.6W,"Falmouth, MA",54.9
+8,118.0,1233882,Cancelled,A0490353,"American Towers, Inc.",41-40-29.3N 070-56-23.2W,"New Bedford, MA",40.8
+9,119.0,1234471,Constructed,A0834522,"SBA Properties, LLC",41-41-30.5N 070-08-47.8W,"Dennis, MA",76.2
+10,120.0,1234487,Constructed,A0386584,"Industrial Communications & Electronics, Inc.",41-39-24.1N 070-29-51.0W,"Mashpee, MA",51.9
+1,121.0,1234704,Granted,A0270924,"Seacoast, LP",41-39-21.2N 070-30-01.1W,"MASHPEE, MA",50.9
+2,122.0,1234741,Constructed,A0843577,"Industrial Tower and Wireless, LLC",41-59-11.4N 070-48-35.2W,"Plympton, MA",46.6
+3,123.0,1234795,Constructed,A0360977,"Industrial Communications & Electronics, Inc.",41-44-00.8N 070-50-02.2W,"Rochester, MA",60.9
+4,124.0,1235228,Constructed,A0834535,"SBA Properties, LLC",41-40-13.3N 070-49-46.1W,"Mattapoisett, MA",60.6
+5,125.0,1235743,Constructed,A0834543,"SBA Properties, LLC",41-50-41.0N 070-45-38.1W,"Carber, MA",46.6
+6,126.0,1236017,Constructed,A0815849,"American Towers, LLC.",41-53-49.1N 070-47-10.0W,"Carver, MA",56.1
+7,127.0,1237253,Constructed,A0819717,"SpectraSite Communications, LLC. through American Towers, LLC.",41-42-11.1N 070-46-47.0W,"Marion, MA",59.7
+8,128.0,1237632,Constructed,A0364289,"Yarmouth, Town of",41-41-17.4N 070-12-56.1W,"S. Yarmouth, MA",27.0
+9,129.0,1238548,Constructed,A0911018,"American Towers, LLC.",41-43-11.5N 070-57-13.8W,"New Bedford, MA",47.5
+10,130.0,1238643,Dismantled,A0755871,T-Mobile Northeast LLC,41-23-11.2N 070-36-38.0W,"West Tisbury, MA",10.1
+1,131.0,1238987,Constructed,A0383238,"new bedford, city of",41-39-13.8N 070-57-37.4W,"new bedford, MA",42.0
+2,132.0,1241892,Constructed,A0362025,Twelve Richards Road LLC,41-57-14.4N 070-42-44.1W,"Plymouth, MA",48.2
+3,133.0,1242019,Constructed,A0815871,"American Towers, LLC.",41-46-44.8N 070-44-13.1W,"Wareham, MA",64.0
+4,134.0,1247047,Constructed,A0570610,EASTERN PROPERTIES LLC,41-55-15.7N 070-45-42.2W,"CARVER, MA",45.7
+5,135.0,1248619,Constructed,A0815886,"American Towers, LLC.",41-59-07.4N 070-50-14.4W,"Halifax, MA",42.9
+6,136.0,1249724,Constructed,A0483781,"Industrial Communications & Electronics, Inc.",41-59-13.4N 070-45-03.7W,"Kingston, MA",36.5
+7,137.0,1250084,Constructed,A0519018,"The Woods Hole, Marthas Vineyard & Nantucket Steamship Authority",41-39-28.8N 070-16-40.7W,"Hyannis, MA",11.0
+8,138.0,1250888,Constructed,A0516495,"Industrial Tower and Wireless, LLC.",42-02-29.3N 070-50-17.8W,"Pembroke, MA",39.6
+9,139.0,1252718,Granted,A0496921,BARDWELL ELECTRONICS,41-23-15.7N 070-36-45.0W,"WEST TISBURY, MA",24.3
+10,140.0,1254329,Constructed,A0661723,SBA Towers II LLC,41-51-27.9N 070-57-47.3W,"Lakeville, MA",57.9
+1,141.0,1255715,Granted,A0812737,DUKES COUNTY SHERIFFS DEPT,41-23-15.8N 070-36-43.6W,"WEST TISBURY, MA",33.2
+2,142.0,1255716,Constructed,A0520441,DUKES COUNTY SHERIFFS DEPT,41-23-15.7N 070-36-45.0W,"WEST TISBURY, MA",24.4
+3,143.0,1255774,Constructed,A0520990,"Industrial Tower and Wireless, LLC.",41-53-48.8N 070-43-03.9W,"Plymouth, MA",45.7
+4,144.0,1256912,Constructed,A0689785,"Industrial Tower and Wireless, LLC.",41-38-17.5N 070-23-26.9W,"Barnstable, MA",45.7
+5,145.0,1259638,Constructed,A1092022,US Coast Guard Navigation Center,41-44-33.9N 070-53-11.6W,"New Bedford, MA",90.2
+6,146.0,1260507,Constructed,A0761364,"SBA Monarch Towers II, LLC",41-39-30.9N 070-54-44.4W,"Fairhaven, MA",24.4
+7,147.0,1260538,Constructed,A0919480,"Global Tower, LLC. through American Towers, LLC",42-00-06.9N 070-44-29.8W,"Kingston, MA",38.7
+8,148.0,1261146,Cancelled,A0651605,T-Mobile Northeast LLC,41-42-31.0N 070-25-38.0W,"Sandwich, MA",57.9
+9,149.0,1261971,Constructed,A0911166,"Industrial Tower and Wireless, LLC.",41-58-31.1N 070-41-32.0W,"Plymouth, MA",38.4
+10,150.0,1261973,Constructed,A0615470,"Industrial Tower and Wireless, LLC.",41-36-55.3N 070-32-19.5W,"Falmouth, MA",45.7
+1,151.0,1262160,Cancelled,A0623245,Omnipoint Communications Inc.,41-55-37.2N 070-46-56.3W,"Carver, MA",45.7
+2,152.0,1262987,Cancelled,A0640001,Omnipoint Communications Inc.,41-37-02.9N 070-51-36.1W,"Fairhaven, MA",45.7
+3,153.0,1264303,Granted,A0599654,Notus Clean Energy LLC,41-36-30.4N 070-36-32.0W,"East Falmouth, MA",118.6
+4,154.0,1265762,Constructed,A0985379,Verizon New England Inc,41-38-10.0N 070-55-29.9W,"New Bedford, MA",28.3
+5,155.0,1266369,Constructed,A0761605,"SBA Monarch Towers II, LLC",41-55-29.9N 070-43-57.8W,"Plymouth, MA",45.7
+6,156.0,1267296,Cancelled,A0737532,T-Mobile Northeast LLC,41-37-10.0N 070-58-27.0W,"Dartmouth, MA",30.8
+7,157.0,1268285,Constructed,A0919653,"Global Tower, LLC. through American Towers, LLC",41-40-15.9N 070-30-59.1W,"Forestdale, MA",45.7
+8,158.0,1268922,Granted,A0642411,Woods Hole Oceanographic Institution,41-32-07.7N 070-38-51.7W,"Woods Hole, MA",125.0
+9,159.0,1268923,Granted,A0642412,Woods Hole Oceanographic Institution,41-32-03.5N 070-39-00.5W,"Woods Hole, MA",125.0
+10,160.0,1271117,Constructed,A0996784,"SBA 2012 TC Assets, LLC",41-53-16.0N 070-32-35.5W,"Plymouth, MA",49.7
+1,161.0,1272102,Constructed,A0762135,"SBA Monarch Towers II, LLC",42-02-24.0N 070-55-46.3W,"East Bridgewater, MA",45.7
+2,162.0,1272609,Constructed,A0712009,Notus Clean Energy LLC,41-36-30.4N 070-36-32.0W,"North Falmouth, MA",122.0
+3,163.0,1273920,Constructed,A1023801,T-Mobile USA Tower LLC,42-02-23.4N 070-46-03.9W,"Pembroke, MA",46.3
+4,164.0,1275495,Granted,A0693110,Aquacultural Research Corporation,41-43-46.1N 070-14-01.4W,"Dennis, MA",74.0
+5,165.0,1277136,Constructed,A0756283,Barnstable Municipal Airport,41-39-57.8N 070-17-08.5W,"Hyannis, MA",31.0
+6,166.0,1277868,Constructed,A1027322,CCATT LLC,41-23-10.3N 070-36-41.7W,"VINEYARD HAVEN, MA",22.9
+7,167.0,1279284,Constructed,A0762509,"SBA Monarch Towers II, LLC",41-49-18.3N 070-58-11.1W,"Lakeville, MA",56.4
+8,168.0,1279881,Constructed,A0781947,COMM Fire District,41-39-30.0N 070-21-07.3W,"Centerville, MA",59.4
+9,169.0,1280449,Constructed,A0760877,"ATC Outdoor DAS, LLC",41-22-27.9N 070-42-11.0W,"Chilmark, MA",14.6
+10,170.0,1280452,Constructed,A0761260,"ATC Outdoor DAS, LLC",41-23-36.2N 070-42-42.1W,"Chilmark, MA",14.9
+1,171.0,1280453,Constructed,A0758789,"ATC Outdoor DAS, LLC",41-22-09.8N 070-41-11.1W,"Chilmark, MA",14.6
+2,172.0,1280459,Constructed,A0758780,"ATC Outdoor DAS, LLC",41-21-15.0N 070-41-56.3W,"Chilmark, MA",14.6
+3,173.0,1280461,Constructed,A0758777,"ATC Outdoor DAS, LLC",41-21-27.9N 070-44-54.2W,"Chilmark, MA",14.6
+4,174.0,1282803,Cancelled,A0876257,T-Mobile Northeast LLC,42-01-33.5N 070-43-35.2W,"Duxbury, MA",36.6
+5,175.0,1284573,Constructed,A0843332,"Industrial Tower and Wireless, LLC",41-45-15.5N 070-57-55.1W,"Freetown, MA",96.0
+6,176.0,1288214,Granted,A0839134,Commonwealth of Massachusetts Department of State Police,41-41-06.7N 070-21-27.1W,"Barnstable, MA",22.8
+7,177.0,1288243,Constructed,A0866571,"Exelis, Inc.",41-23-14.0N 070-36-41.6W,"West Tinsbury, MA",30.5
+8,178.0,1288256,Granted,A1081041,Cellco Partnership,41-20-54.5N 070-42-27.4W,"Chilmark, MA",18.2
+9,179.0,1288257,Granted,A1081042,Cellco Partnership,41-21-19.3N 070-41-59.6W,"Chillmark, MA",18.2
+10,180.0,1288566,Constructed,A0921114,"GCGI Development, LLC",41-25-12.3N 070-35-30.0W,"Oak Bluffs, MA",37.4
+1,181.0,1289879,Constructed,A0978384,Acushnet Police Department,41-41-17.7N 070-55-11.3W,"Acushnet, MA",51.8
+2,182.0,1292176,Constructed,A1001990,"IWG Towers Assets I, LLC",41-44-30.5N 070-34-57.9W,"Bourne, MA",39.9
+3,183.0,1293920,Constructed,A1048531,"Hall Communications, Inc.",41-38-29.1N 070-57-31.9W,"New Bedford, MA",60.7
+4,184.0,1294498,Constructed,A1048530,"Hall Communications, Inc.",41-37-20.2N 070-55-07.5W,"New Bedford, MA",182.9
+5,185.0,1296443,Constructed,A1032958,"Industrial Tower and Wireless, LLC",41-35-40.1N 070-33-58.8W,"Falmouth, MA",45.7
+6,186.0,1301069,Cancelled,A1086070,Eco-Site,41-41-41.8N 070-29-57.7W,"Sandwich, MA",41.2
+7,187.0,1301823,Granted,A1065048,Hyannis Fire District,41-39-12.5N 070-17-21.5W,"Hyannis, MA",42.0
