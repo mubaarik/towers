@@ -1,13 +1,13 @@
-### About this repository
+# About this repository
 
 ## Running the command 
 
-# Check USRP connection 
+### Check USRP connection 
 
-# Run the data collection scripts 
+### Run the data collection scripts 
 
 ## Modules 
 
-# Collecting the FFT Samples
+### Collecting the FFT Samples
 
-# Processing the FFT samples 
+### Processing the FFT samples 
