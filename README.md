@@ -23,7 +23,7 @@ To run the scripts please use the following command. The command expects properl
 ##### OPtional Arguments 
 
 The following are the list arguments you can specify for resired configuration with a fairly detailed discription of their intended influence.
-1. **-a** or **--args** 
+1. **-a**, **--args** 
   - type: string
   - description: specifies the UHD device address. 
   - expected format: -a "addr=<addres>" or --args "addr=<address>
