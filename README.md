@@ -10,9 +10,11 @@ To assign an ip address to the device please run the following command.
 
 `sudo ifconfig <interface> <ip address> netmask <net mask>`
 
-for example
+Following is an example using the recommended configurations.
 
 `sudo ifconfig eth0 192.168.10.1 netmask 255.255.255.0` (recommended method)
+
+for more informations regarding the USRP networking configuration, please visit [the USRP hardware manual documentation](https://files.ettus.com/manual/page_usrp2.html).
 ### Run the data collection scripts 
 
 ## Modules 
