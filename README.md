@@ -64,7 +64,7 @@ The above parameters are the most the important and relevant arguments but there
 
 This program uses the **argparser** module, for better understanding of the command line argument specifications please [see](https://docs.python.org/2/library/argparse.html). Thank you.
 ### Rerefence  
-The above command runs **--towers/towers/uhd_scripts/usrp_commands.sh--**, which runs **--towers/towers/uhd_scripts/usrp_fft.py--** and --**_towers/towers/uhd_scripts/file_processing.py_** as two separate processes. The following two sections.
+The above command runs **_towers/towers/uhd_scripts/usrp_commands.sh_**, which runs **_towers/towers/uhd_scripts/usrp_fft.py_** and **_towers/towers/uhd_scripts/file_processing.py_** as two separate processes. The following two sections.
 
 ##### Collecting the FFT Samples
 
