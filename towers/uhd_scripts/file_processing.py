@@ -5,6 +5,7 @@ if __name__=='__main__':
 	sleeps=0
 	max_number_of_sleeps = 200
 	while True:
+		#Get the csv files in the meta_files directory
 		files = directory_parser('meta_files', extension='.csv')
 		if files:
 			sleeps = 0

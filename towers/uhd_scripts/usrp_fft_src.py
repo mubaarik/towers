@@ -230,6 +230,7 @@ def get_options():
                       help="Show asynchronous message notifications from UHD [default=%default]")
     parser.add_option("", "--sync", type="choice", choices=('default', 'pps'),
                       default='default', help="Set to 'pps' to sync devices to PPS instead of internal.")
+    parser.add_option("","--remove", action="store_false", default=True, help='indicate whether or not to remove the processed files')
     (options, args) = parser.parse_args()
 
     if len(args) != 1:
