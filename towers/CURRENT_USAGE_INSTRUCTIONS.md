@@ -16,5 +16,6 @@ To collect fft samples type the following commands
 - To collect samples and extract the power,freq pairs run: `./usrp_commands.sh <optional parameters>` the optional parameters are same as the before(as _usrp_fft.py <optional parameters>_).</br>
 - To see the collected power, freq pairs type: `cd collected_files/`
 
-
+### Plotting the data
+When you have the power,freq pairs in _collected\_data/_, run(in _uhd\_scripts_) `python plotter.py input_dirc=collected_data/`. You see an fft plot and if you close it, another one will come up until you go through all of them.
 
