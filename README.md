@@ -73,6 +73,7 @@ The above command runs **_towers/towers/uhd_scripts/usrp_commands.sh_**, which r
 # Daily Plan
 #### Today
 - [ ] Add the plotter to Analizer
+- [ ] give the collected files headers
 - [ ] Add an option to the argparse
 - [ ] Write quick instructions for Justin
 - [ ] Pull and test
