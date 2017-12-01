@@ -1,5 +1,5 @@
 ### About this repository
-Contains repository contains the python scripts and other files for collecting spectrum data with the USRP N200 device. For instructions concerning running the scripts please keep reading.
+This repository contains the python scripts and other files for collecting spectrum data with the USRP N200 device. For instructions concerning running the scripts please keep reading.
 
 ### Running the command 
 
@@ -22,7 +22,7 @@ To run the scripts please use the following command. The command expects properl
 
 ##### OPtional Arguments 
 
-The following are the list arguments you can specify for resired configuration with a fairly detailed discription of their intended influence.
+The following are the list of the most important arguments you can specify for resired configuration with a fairly detailed discription of their intended influence.
 1. **-a**, **--args** 
   - type: string
   - description: specifies the UHD device address. 
