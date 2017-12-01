@@ -193,7 +193,7 @@ class usrp_fft(gr.top_block):
 def get_options():
     usage="%prog: [options] output_filename"
     parser = OptionParser(option_class=eng_option, usage=usage)
-    parser.add_option("-a", "--args", type="string", default="",
+    parser.add_option("-a", "--args", type="string", default="addr=192.168.10.2",
                       help="UHD device address args , [default=%default]")
     parser.add_option("", "--spec", type="string", default=None,
                       help="Subdevice of UHD device where appropriate")
