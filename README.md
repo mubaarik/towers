@@ -1,10 +1,10 @@
 ### About this repository
 This repository contains the python scripts and other files for collecting spectrum data with the USRP N200 device. For instructions concerning running the scripts please keep reading.
 
-### Running the command 
+### Running the commands 
 
 #### Check USRP connection 
-Before you run the scripts, please make sure that the device is connected via ethernet or USB3 port. You will need to specify the device ip address to run the scripts. 
+Before you run the scripts, please make sure that the device is connected via ethernet or USB3 port, with ethernet to USB adapter. You will need to specify the device ip address to run the scripts. 
 
 To assign an ip address to the device please run the following command.
 
