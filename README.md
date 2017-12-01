@@ -79,7 +79,7 @@ The above command runs **_towers/towers/uhd_scripts/usrp_commands.sh_**, which r
 - [ ] Clean the tower analysis Scripts
 - [ ] Plan here 
 
-### Add storage management scripts
+### Future tasks
 - [ ] Keep track of the available storage in the mircoSD card
 - [ ] Compress files and directory if low on storage 
 - [ ] Stop collection if all options are out(to avoid crashes and abort the mission)
