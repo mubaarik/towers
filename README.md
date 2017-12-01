@@ -76,7 +76,7 @@ The above command runs **_towers/towers/uhd_scripts/usrp_commands.sh_**, which r
 - [X] give the collected files headers
 - [X] Add an option to the argparse
 - [X] [Write quick instructions for Justin](https://github.com/mubaarik/towers/blob/master/towers/CURRENT_USAGE_INSTRUCTIONS.md)
-- [ ] Pull and test
+- [X] Pull and test
 - [ ] Clean the tower analysis Scripts
 - [ ] Plan here 
 
