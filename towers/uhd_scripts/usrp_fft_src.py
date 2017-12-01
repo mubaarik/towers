@@ -201,10 +201,10 @@ def get_options():
                       help="Select receive channels")
     parser.add_option("-A", "--antenna", type="string", default=None,
                       help="Select Rx Antenna(s) where appropriate.\nUse a comma-delimited list if different channels have different antenna ports.")
-    parser.add_option("-r", "--samp-rate", type="eng_float", default=10e6,
+    parser.add_option("-r", "--samp-rate", type="eng_float", default=20e6,
                       help="Set sample rate (bandwidth) [default=%default]")
-    parser.add_option('-z','--fft-size', type=int,default=4092, 
-                        help = "Set the FFT bins(defaults to 1024)")
+    parser.add_option('-z','--fft-size', type=int,default=8184, 
+                        help = "Set the FFT bins(defaults to %default)")
     parser.add_option("-f", "--freq", type="eng_float", default=None,
                       help="Set frequency to FREQ", metavar="FREQ")
     parser.add_option("", "--lo-offset", type="eng_float", default=None,
@@ -233,12 +233,14 @@ def get_options():
     parser.add_option("","--remove", action="store_false", default=True, help='indicate whether or not to remove the processed files')
     (options, args) = parser.parse_args()
 
-    if len(args) != 1:
-        parser.print_help()
-        exit(1)
-    if options.freq is None:
-        parser.print_help()
-        sys.stderr.write('You must specify the frequency with -f FREQ\n')
-        exit(1)
+    # if len(args) != 1:
+    #     parser.print_help()
+    #     exit(1)
+    # if options.freq is None:
+    #     parser.print_help()
+    #     sys.stderr.write('You must specify the frequency with -f FREQ\n')
+    #     exit(1)
+    if len(args)<1:
+        args.append('randon_filename')
     return (options, args[0])
     
