@@ -72,15 +72,15 @@ The above command runs **_towers/towers/uhd_scripts/usrp_commands.sh_**, which r
 
 
 ###Today
-[] add the plotter to Analizer
-  [] add an option to the argparse
-[] Write quick instructions for Justin
-[] Pull and test  
-[] Clean the tower analysis Scripts 
-  [] Plan here 
-[] 
+-[] add the plotter to Analizer
+  -[] add an option to the argparse
+-[] Write quick instructions for Justin
+-[] Pull and test  
+-[] Clean the tower analysis Scripts 
+  -[] Plan here 
+-[] 
 
 ### Add storage management scripts
-[] Keep track of the available storage in the SD card
-[] Compress files and directory if low on storage 
-[] Stop collection of all options are out(to avoid crushes and abort the mission)
+-[] Keep track of the available storage in the mircoSD card
+-[] Compress files and directory if low on storage 
+-[] Stop collection if all options are out(to avoid crushes and abort the mission)
