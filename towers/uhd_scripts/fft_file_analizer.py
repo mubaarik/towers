@@ -88,7 +88,7 @@ class Analizer:
 	'''
 	def pw_frq_pair_to_csv(self, sample):
 		f = str(sample.time_stamp)+'_'+str(int(sample.center_freq))+'.csv'
-		pd.DataFrame(self.freq_map(sample)).to_csv('collected_data/'+f)
+		pd.DataFrame(self.freq_map(sample),columns=['Power(dB)','Freq']).to_csv('collected_data/'+f)
 		if self.remove:
 			os.remove(sample.filename)
 	'''
