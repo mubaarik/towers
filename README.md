@@ -72,13 +72,12 @@ The above command runs **_towers/towers/uhd_scripts/usrp_commands.sh_**, which r
 
 
 ###Today
-- [] add the plotter to Analizer
-- [] add an option to the argparse
-- [] Write quick instructions for Justin</br>
-- [] Pull and test</br>
-- [] Clean the tower analysis Scripts</br> 
-  -[] Plan here </br>
-- [] 
+- [] Add the plotter to Analizer
+- [] Add an option to the argparse
+- [] Write quick instructions for Justin
+- [] Pull and test
+- [] Clean the tower analysis Scripts
+- [] Plan here 
 
 ### Add storage management scripts
 - [] Keep track of the available storage in the mircoSD card
