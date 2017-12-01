@@ -22,7 +22,7 @@ To run the scripts please use the following command. The command expects properl
 
 ##### OPtional Arguments 
 
-The following are the list of the most important arguments you can specify for resired configuration with a fairly detailed discription of their intended influence.
+The following are the list of the most important arguments you can specify for a desired configuration with a fairly detailed discription of their intended influence.
 1. **-a**, **--args** 
   - type: string
   - description: specifies the UHD device address. 
