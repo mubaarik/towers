@@ -71,7 +71,7 @@ The above command runs **_towers/towers/uhd_scripts/usrp_commands.sh_**, which r
 ##### Processing the FFT samples 
 
 
-###Today
+### Today
 - [ ] Add the plotter to Analizer
 - [ ] Add an option to the argparse
 - [ ] Write quick instructions for Justin
