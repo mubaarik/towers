@@ -38,7 +38,7 @@ def plotFile(input_file, output_dirc=None, save_plot=False,filename=None):
 	filename = filename_formatter(filename, '.jpg')
 	data = pd.read_csv(input_file)
 	fig, ax = plt.subplots()
-	ax.plot(data['1'].values,10*np.log10(data['0'].values))
+	ax.plot(data['Freq'].values,10*np.log10(data['Power(dB)'].values))
 	ax.set_title(filename.split('.')[0])
 	if save_plot:
 		fig.savefig('figures/'+filename)
@@ -86,7 +86,7 @@ def options():
 	return args
 if __name__=="__main__":
 	args = options()
-	plotter(input_dirc=args.input_dirc, output_dirc=args.output_file,save_plots=args.save_plots, plot_file = args.plot_file,
+	plotter(input_dirc=args.input_dirc, output_dirc=args.output_dirc,save_plots=args.save_plots, plot_file = args.plot_file,
 	 input_file=args.input_file,output_file=args.output_file)
 
 
