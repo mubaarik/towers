@@ -46,7 +46,7 @@
 3. **fft\_file\_analizer.py**
    This file contains two classes _Sample_ which represents a sample with given center frequency, time stamp, and filename(where the samples are stored), and _Analizer_ which takes in a meta file as described earlier defines couple of methods for processing the sample file and analyzing.
 4. **file\_processing.py**
-   This file contains the code that continously checks if if samples were collected by checking meta files in _meta\_files_. Every meta file it finds, it goes through all the sample files it maps and takes the averages of the ffts stored in sample file, maps the average samples to the corresponding frequencies, and finally it saves the resulting map to _collected\_data/time\_centerFrequency.csv_, essentially converting the sample to a csv file.  
+   This file contains the code that continously checks if if samples were collected by checking meta files in _meta\_files_. Every meta file it finds, it goes through all the sample files it maps and takes the averages of the ffts stored in sample file, maps the average samples to the corresponding frequencies, and finally it saves the resulting map to _collected\_data/time\_centerFrequency.csv_, essentially converting the sample to a csv file. The csv file is in the form (index,power(dB),freq).
 3. **usrp_commands.sh**
 
 ###
