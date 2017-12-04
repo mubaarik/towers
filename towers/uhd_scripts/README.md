@@ -24,9 +24,9 @@
       ```python
       if options.nsamples is None:
             	self.connect((self.fft_vxx_0, 0), (self.blocks_file_sink_0, 0))
-    	else:
-        	self._head = blocks.head(gr.gr.sizeof_gr_complex*options.fft_size, int(options.nsamples)/options.fft_size)
-        	self.connect((self.fft_vxx_0, 0), self._head,(self.blocks_file_sink_0, 0))    
+    else:
+        self._head = blocks.head(gr.gr.sizeof_gr_complex*options.fft_size, int(options.nsamples)/options.fft_size)
+        self.connect((self.fft_vxx_0, 0), self._head,(self.blocks_file_sink_0, 0))    
       self.connect((self.blocks_stream_to_vector_0, 0), (self.fft_vxx_0, 0))    
       #self.connect((self.fft_vxx_0, 0), (self.blocks_complex_to_mag_squared_0, 0))    
       self.connect((self.uhd_usrp, 0), (self.blocks_stream_to_vector_0, 0)) 
