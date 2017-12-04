@@ -1,10 +1,10 @@
 ### About this repository
-Contains repository contains the python scripts and other files for collecting spectrum data with the USRP N200 device. For instructions concerning running the scripts please keep reading.
+This repository contains the python scripts and other files for collecting spectrum data with the USRP N200 device. For instructions concerning running the scripts please keep reading.
 
-### Running the command 
+### Running the commands 
 
 #### Check USRP connection 
-Before you run the scripts, please make sure that the device is connected via ethernet or USB3 port. You will need to specify the device ip address to run the scripts. 
+Before you run the scripts, please make sure that the device is connected via ethernet or USB3 port, with ethernet to USB adapter. You will need to specify the device ip address to run the scripts. 
 
 To assign an ip address to the device please run the following command.
 
@@ -22,7 +22,7 @@ To run the scripts please use the following command. The command expects properl
 
 ##### OPtional Arguments 
 
-The following are the list arguments you can specify for resired configuration with a fairly detailed discription of their intended influence.
+The following are the list of the most important arguments you can specify for a desired configuration with a fairly detailed discription of their intended influence.
 1. **-a**, **--args** 
   - type: string
   - description: specifies the UHD device address. 
@@ -76,7 +76,7 @@ The above command runs **_towers/towers/uhd_scripts/usrp_commands.sh_**, which r
 - [X] give the collected files headers
 - [X] Add an option to the argparse
 - [X] [Write quick instructions for Justin](https://github.com/mubaarik/towers/blob/master/towers/CURRENT_USAGE_INSTRUCTIONS.md)
-- [ ] Pull and test
+- [X] Pull and test
 - [ ] Clean the tower analysis Scripts
 - [ ] Plan here 
 
