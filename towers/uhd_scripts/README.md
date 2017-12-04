@@ -31,6 +31,7 @@
       #self.connect((self.fft_vxx_0, 0), (self.blocks_complex_to_mag_squared_0, 0))    
       self.connect((self.uhd_usrp, 0), (self.blocks_stream_to_vector_0, 0)) 
       ```
+      Refer to the GNU Radio [wiki](https://wiki.gnuradio.org/index.php/Main_Page) and the GNU Radio [reference documentation](https://gnuradio.org/doc/doxygen/) for detailed documentation of gr-blocks and other modules used here.
         
    
    
