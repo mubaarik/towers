@@ -36,10 +36,11 @@
    
    
 2. **usrp_fft.py**</br>
-   The cammand line interface for **_usrp_fft_src.py__**, it accepts numerious command line arguments to set the parameters for streaming  from the USRP, set the fft-size, etc. To view a list of the arguments and their description, run `$ python usrp_fft.py --help`.</br>
-   Before running the steaming scripts, this module groups the ARFCNs into bands. To see how this grouping is done please take a look at the [utility functions](https://github.com/mubaarik/towers/blob/master/towers/uhd_scripts/utility_funcs.py).
+   The cammand line interface for **_usrp_fft_src.py_**, it accepts numerious command line arguments to set the parameters for streaming  from the USRP, set the fft-size, etc. To view a list of the arguments and their description, run `$ python usrp_fft.py --help`.</br>
    
-   After grouping the ARFCNs into bands it further segments the bands to get a list of sub-band with width of no greater than the requisted sample rate. After this segmentation, it creates a list of the center frequencies for, one for each sub-band. Finally, it goes through each the center frequencies and collects samples for it and saves the to fft_files/time_centerFrequency.32fc. where _time_ is the time this sample was collected and _centerFrequency_ is the center frequency of the sub-band this sample corresponds. 
+   Before running the streaming scripts, this module groups the ARFCNs into bands. To see how this grouping is done please take a look at the [utility functions](https://github.com/mubaarik/towers/blob/master/towers/uhd_scripts/utility_funcs.py).
+   
+   After grouping the ARFCNs into bands it further segments the bands to get a list of sub-bands with width of no greater than the requisted sample rate. After this segmentation, it creates a list of the center frequencies, one for each sub-band. Finally, it goes through each the center frequencies and collects samples for them and saves the to fft_files/time_centerFrequency.32fc. where _time_ is the time this sample was collected and _centerFrequency_ is the center frequency of the sub-band this sample corresponds to. 
    
    For each pass through, it also creates a csv file mapping time,center frequency,sample rate, and other parameters to name of the sample file, and saves it to meta_files/time.csv. The file processing modules(next section) use this directory to look for collected samples to process.  
 3. **fft_analizer.py**
