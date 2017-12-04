@@ -22,11 +22,14 @@
       ```
       b. **Connecting the blocks**
       ```python
-      self.fft_vxx_0 = fft.fft_vcc(options.fft_size, True, (), True, 1)
-      self.blocks_stream_to_vector_0 = blocks.stream_to_vector(gr.sizeof_gr_complex*1, options.fft_size)
-      self.blocks_file_sink_0 = blocks.file_sink(gr.sizeof_gr_complex*options.fft_size,self.filenames[0])
-      self.blocks_file_sink_0.set_unbuffered(False)
-      self.blocks_complex_to_mag_squared_0 = blocks.complex_to_mag_squared(options.fft_size)
+      if options.nsamples is None:
+            	self.connect((self.fft_vxx_0, 0), (self.blocks_file_sink_0, 0))
+    	else:
+        	self._head = blocks.head(gr.gr.sizeof_gr_complex*options.fft_size, int(options.nsamples)/options.fft_size)
+        	self.connect((self.fft_vxx_0, 0), self._head,(self.blocks_file_sink_0, 0))    
+      self.connect((self.blocks_stream_to_vector_0, 0), (self.fft_vxx_0, 0))    
+      #self.connect((self.fft_vxx_0, 0), (self.blocks_complex_to_mag_squared_0, 0))    
+      self.connect((self.uhd_usrp, 0), (self.blocks_stream_to_vector_0, 0)) 
       ```
         
    
