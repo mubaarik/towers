@@ -5,7 +5,7 @@
    Streams Q/I samples from the USRP device and takes the fft before it saves the samples into a file, the bilow image shows the GNUradio gr-blocks used to assemble this module.</br>
    ![gr-blocks](blocks.png?raw=true "gnuradio gr-blocks")
    ###### **Block descriptions**</br>
-    - **UHD: USRP Source** is the USRP device block. It encapsolutes the low-level work needed for configuring the device(and potential subdevices) and streaming the raw samples, Q/I. For more on **USRP Source** visit the [gnuradio reference](https://gnuradio.org/doc/doxygen/classgr_1_1uhd_1_1usrp__source.html)</br>  
+    - **UHD: USRP Source** is the USRP device block. It encapsulates the low-level work needed for configuring the device(and potential subdevices) and streaming the raw samples, Q/I. For more on **USRP Source** visit the [gnuradio reference](https://gnuradio.org/doc/doxygen/classgr_1_1uhd_1_1usrp__source.html)</br>  
     - **stream to vector**: The **USRP Source** block spits out the data one-by-one(stream), but the **FFT** block expects vectors to take the ffts of. This module groups the stream from the **USRP Source** into vectors of size the number of fft bins.
     - The **FFT** block takes the [Fast Fourier Transform](https://en.wikipedia.org/wiki/Fast_Fourier_transform) of the vectors from the **stream to vector** block.
     - **Complex to mag^2** computes the power from the output of the **FFT** block outputting floats.
