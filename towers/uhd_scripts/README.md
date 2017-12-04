@@ -10,6 +10,26 @@
     - The **FFT** block takes the [Fast Fourier Transform](https://en.wikipedia.org/wiki/Fast_Fourier_transform) of the vectors from the **stream to vector** block.
     - **Complex to mag^2** computes the power from the output of the **FFT** block outputting floats.
     - Finally **File Sink** block sames the output of the **Complex to mag^2** block to a file.
+   ###### **Important parts of the code for modifications**
+      a. **Initializing the blocks**
+         
+         ```python
+         self.fft_vxx_0 = fft.fft_vcc(options.fft_size, True, (), True, 1)
+         self.blocks_stream_to_vector_0 = blocks.stream_to_vector(gr.sizeof_gr_complex*1, options.fft_size)
+         self.blocks_file_sink_0 = blocks.file_sink(gr.sizeof_gr_complex*options.fft_size,self.filenames[0])
+         self.blocks_file_sink_0.set_unbuffered(False)
+         self.blocks_complex_to_mag_squared_0 = blocks.complex_to_mag_squared(options.fft_size)
+         ```
+      b. Connecting the blocks
+      ```python
+      self.fft_vxx_0 = fft.fft_vcc(options.fft_size, True, (), True, 1)
+      self.blocks_stream_to_vector_0 = blocks.stream_to_vector(gr.sizeof_gr_complex*1, options.fft_size)
+      self.blocks_file_sink_0 = blocks.file_sink(gr.sizeof_gr_complex*options.fft_size,self.filenames[0])
+      self.blocks_file_sink_0.set_unbuffered(False)
+      self.blocks_complex_to_mag_squared_0 = blocks.complex_to_mag_squared(options.fft_size)
+      ```
+        
+   
    
 1. **usrp_fft.py**</br>
    It uses **_usrp_fft_scr.py_** to stream ftt the samples from the USRP device using the bilow GNURADIO blocks. </br>
