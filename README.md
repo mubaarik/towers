@@ -70,17 +70,4 @@ The above command runs **_towers/towers/uhd_scripts/usrp_commands.sh_**, which r
 
 ##### Processing the FFT samples 
 
-# Daily Plan
-#### Today
-- [X] Add the plotter to Analizer
-- [X] give the collected files headers
-- [X] Add an option to the argparse
-- [X] [Write quick instructions for Justin](https://github.com/mubaarik/towers/blob/master/towers/CURRENT_USAGE_INSTRUCTIONS.md)
-- [X] Pull and test
-- [ ] Clean the tower analysis Scripts
-- [ ] Plan here 
 
-#### Future tasks
-- [ ] Keep track of the available storage in the mircoSD card
-- [ ] Compress files and directory if low on storage 
-- [ ] Stop collection if all options are out(to avoid crashes and abort the mission)
