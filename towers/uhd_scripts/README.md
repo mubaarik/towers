@@ -48,7 +48,9 @@
 4. **file\_processing.py**</br>
    This file contains the code that continouosly checks if samples were collected by checking meta files in _meta\_files_. For every meta file it finds, it goes through all the sample files it maps and takes the averages of the ffts stored in the sample file, maps the average samples to the corresponding frequencies, and finally it saves the resulting map to _collected\_data/time\_centerFrequency.csv_, essentially converting the sample file to a csv file. The csv file is in the form (index,power(dB),freq).
 3. **usrp\_commands.sh**</br>
-   This bash file runs the data streaming and file processing as two seperate processes. 
+   This bash file runs the data streaming and file processing as two seperate processes.It expects the same commandline arguments as the `usrp_fft.py`.<\br>
+   
+   Run: `./usrp_commands.sh --help` to take a look at the arguments again and `./usrp_commands.sh <optional arguments>` to run it. Make sure that you're in the _uhd\_scripts_ directory(`cd ~/Desktop/towers/towers/uhd_scripts`).
 
 ###
 
